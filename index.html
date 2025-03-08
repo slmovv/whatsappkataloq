@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Kataloq</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>WhatsApp Kataloq</h2>
+    
+    <button class="whatsapp-button" onclick="sendMessage('Kart nömrəsi: 4169 7388 0329 1909')">💳 Kart Nömrəsi </button>
+    <button class="whatsapp-button" onclick="sendMessage('M10 nömrəsi: 0708636707')">📦 M10 </button>
+    <button class="whatsapp-button" onclick="sendMessage('100 elmas 2 AZN')">📦 Elmas qiymətləri </button>
+    <button class="whatsapp-button" onclick="sendMessage('Endirimlər barədə məlumat istəyirəm')">🔖 Endirimlər</button>
+
+    <script>
+        function sendMessage(message) {
+            var phoneNumber = "0775523253"; // WhatsApp nömrəsi
+            var encodedMessage = encodeURIComponent(message);
+            var whatsappUrl = "https://wa.me/994" + phoneNumber + "?text=" + encodedMessage;
+            window.open(whatsappUrl, "_blank");
+        }
+    </script>
+
+</body>
+</html>
